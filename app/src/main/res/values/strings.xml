@@ -7,7 +7,10 @@
 
     <!--Login Fragment strings-->
     <string name="hello_world">Hello world!</string>
+    <string name="login">Log In</string>
     <!--Credit Fragment strings-->
     <string name="credit_title">Credits</string>
     <string name="credit_description">Shane and Alex</string>
+    <!--Home strings-->
+    <string name="home_title">Home Page</string>
 </resources>

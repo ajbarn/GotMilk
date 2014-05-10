@@ -1,14 +1,17 @@
 package fragments;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.barnett.blackie.gotmilk.app.R;
+import com.barnett.blackie.gotmilk.app.activities.HomeActivity;
 
 import Constants.Constants;
 
@@ -41,6 +44,14 @@ public class LogInFragment extends Fragment {
             public boolean onLongClick(View view) {
                 Log.d(Constants.GOTMILKLOGTAG, "you have long clicked");
                 return true;
+            }
+        });
+        Button loginButton = (Button) view.findViewById(R.id.login_button);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), HomeActivity.class);
+                startActivity(intent);
             }
         });
     }
