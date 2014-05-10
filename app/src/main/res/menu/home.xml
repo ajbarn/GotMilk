@@ -1,8 +1,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.barnett.blackie.gotmilk.app.activities.LogInActivity" >
-    <item android:id="@+id/action_credits"
-        android:title="@string/action_credits"
+    <item android:id="@+id/action_logout"
+        android:title="@string/home_menu_logout"
         android:orderInCategory="100"
-        android:showAsAction="never" />
+        android:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_lock_lock"/>
 </menu>

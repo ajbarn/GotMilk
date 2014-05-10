@@ -9,18 +9,43 @@
     tools:context="com.barnett.blackie.gotmilk.app.activities.LogInActivity$PlaceholderFragment">
 
     <TextView
-        android:text="@string/hello_world"
+        android:id="@+id/login_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView" />
+        android:layout_centerHorizontal="true"
+        android:text="@string/login_welcome_text"
+         />
+    <EditText
+        android:id="@+id/login_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/login_welcome"
+        android:layout_marginTop="10dp"
+        android:inputType="textEmailAddress"
+        android:hint="@string/login_email_hint"
+        />
+    <EditText
+        android:id="@+id/login_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/login_email"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:hint="@string/login_password_hint"
+        />
 
     <Button
+        android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:padding="10dp"
         android:text="@string/login"
-        android:id="@+id/login_button"/>
+        />
 
 
 

@@ -4,11 +4,14 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.barnett.blackie.gotmilk.app.R;
 import com.barnett.blackie.gotmilk.app.activities.HomeActivity;
@@ -32,7 +35,7 @@ public class LogInFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        TextView tv = (TextView) view.findViewById(R.id.textView);
+        TextView tv = (TextView) view.findViewById(R.id.login_welcome);
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,9 +53,32 @@ public class LogInFragment extends Fragment {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), HomeActivity.class);
-                startActivity(intent);
+                if (isValidEmail() && isValidPassword()) {
+                    Intent intent = new Intent(getActivity(), HomeActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getActivity(), "Invalid email or password", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
+    }
+
+    private boolean isValidEmail() {
+        EditText emailField = (EditText) getView().findViewById(R.id.login_email);
+        String email = emailField.getText().toString();
+        if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isValidPassword() {
+        EditText passwordField = (EditText) getView().findViewById(R.id.login_password);
+        String password = passwordField.getText().toString();
+        if (password.length() >= 6) {
+            return true;
+        }
+        return false;
     }
 }

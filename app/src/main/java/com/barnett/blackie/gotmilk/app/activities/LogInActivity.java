@@ -1,6 +1,7 @@
 package com.barnett.blackie.gotmilk.app.activities;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -14,13 +15,16 @@ import fragments.LogInFragment;
 
 public class LogInActivity extends Activity {
 
+    private Fragment fragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
         if (savedInstanceState == null) {
+            fragment = new LogInFragment();
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new LogInFragment())
+                    .add(R.id.container, fragment)
                     .commit();
         }
     }
@@ -33,6 +37,18 @@ public class LogInActivity extends Activity {
     }
 
     @Override
+    public void onBackPressed() {
+        if(fragment instanceof LogInFragment) {
+            super.onBackPressed();
+        } else {
+            fragment = new LogInFragment();
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.container, fragment)
+                    .commit();
+        }
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -40,8 +56,9 @@ public class LogInActivity extends Activity {
         int id = item.getItemId();
         if (id == R.id.action_credits) {
             Log.v("Got Milk", "Credits");
+            fragment = new CreditsFragment();
             getFragmentManager().beginTransaction()
-                    .replace(R.id.container, new CreditsFragment())
+                    .replace(R.id.container, fragment)
                     .commit();
             return true;
         }

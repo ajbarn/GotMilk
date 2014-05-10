@@ -6,11 +6,16 @@
     <string name="action_credits">Credits</string>
 
     <!--Login Fragment strings-->
-    <string name="hello_world">Hello world!</string>
+    <string name="login_welcome_text">Welcome to Got Milk\nPlease Login Below</string>
+
+    <string name="login_email_hint">Email Address</string>
+    <string name="login_password_hint">Password</string>
+
     <string name="login">Log In</string>
     <!--Credit Fragment strings-->
     <string name="credit_title">Credits</string>
     <string name="credit_description">Shane and Alex</string>
     <!--Home strings-->
     <string name="home_title">Home Page</string>
+    <string name = "home_menu_logout">Log Out</string>
 </resources>
