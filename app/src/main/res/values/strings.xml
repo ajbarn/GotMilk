@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- global strings -->
+    <string name="app_name">Got Milk</string>
+    <string name="action_credits">Credits</string>
+
+    <!--Login Fragment strings-->
+    <string name="hello_world">Hello world!</string>
+    <!--Credit Fragment strings-->
+    <string name="credit_title">Credits</string>
+    <string name="credit_description">Shane and Alex</string>
+</resources>
