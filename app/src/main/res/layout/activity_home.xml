@@ -3,7 +3,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
 
     <TextView
@@ -12,4 +13,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/homeView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/grocery_item_one"
+        android:id="@+id/textView"
+        android:textSize="25dp"/>
+
+    <ToggleButton
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/toggleButton"
+        android:checked="false"
+        android:textOn="@string/user_turn_item_one"
+        android:textOff="@string/friend_turn_item_one"
+        android:layout_weight="0.09"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal" />
+
 </LinearLayout>

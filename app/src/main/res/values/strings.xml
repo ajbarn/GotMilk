@@ -18,4 +18,7 @@
     <!--Home strings-->
     <string name="home_title">Home Page</string>
     <string name = "home_menu_logout">Log Out</string>
+    <string name = "user_turn_item_one">Alex's Turn</string>
+    <string name = "friend_turn_item_one">Shane's Turn</string>
+    <string name = "grocery_item_one">Milk</string>
 </resources>
