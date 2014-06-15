@@ -4,32 +4,47 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="@android:color/holo_orange_dark">
 
 
     <TextView
         android:text="@string/home_title"
-        android:layout_gravity="center"
+        android:layout_gravity="left|center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/homeView" />
+        android:id="@+id/homeView"
+        android:textColor="#ffffffff"
+        android:textSize="25dp" />
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/grocery_item_one"
-        android:id="@+id/textView"
-        android:textSize="25dp"/>
+        android:id="@+id/editText"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffffff"
+        android:textIsSelectable="false"
+        android:textSize="25sp"
+        android:paddingTop="25sp"
+        android:autoText="false"
+        android:clickable="true"
+        android:inputType="textAutoCorrect"
+        android:textAlignment="center"
+        android:paddingBottom="15sp"
+        android:paddingLeft="100sp"
+        android:paddingRight="100sp" />
 
     <ToggleButton
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_width="300sp"
+        android:layout_height="25sp"
         android:id="@+id/toggleButton"
         android:checked="false"
         android:textOn="@string/user_turn_item_one"
         android:textOff="@string/friend_turn_item_one"
         android:layout_weight="0.09"
-        android:textSize="20dp"
-        android:layout_gravity="center_horizontal" />
+        android:textSize="25sp"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="#ffffffff" />
 
 </LinearLayout>
